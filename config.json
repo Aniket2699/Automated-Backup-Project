@@ -1,0 +1,8 @@
+{
+  "project_dir": "/home/ubuntu/backups/MyApp",
+  "project_name": "MyApp",
+  "remote": "gdrive",
+  "remote_path": "Backups/MyProject",
+  "retention": 7,
+  "webhook_url": "https://webhook.site/your-unique-url"
+}
