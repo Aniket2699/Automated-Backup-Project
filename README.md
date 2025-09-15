@@ -3,7 +3,7 @@
 
 This project provides a fully automated backup solution with Google Drive integration.
 
-## Key Features:
+## **Key Features:**
 
 📦 Compresses project files into .tar.gz archives
 
@@ -17,7 +17,7 @@ This project provides a fully automated backup solution with Google Drive integr
 
 ⏰ Supports cron job scheduling for hands-free automation
 
-### ⚙️ Requirements
+### **⚙️ Requirements**
 
 Python 3.x
 
@@ -26,7 +26,7 @@ rclone
 
 Linux environment (Ubuntu recommended)
 
-### 🛠️ Installation & Setup
+### **🛠️ Installation & Setup**
 1. Clone the Repository
 git clone https://github.com/<your-username>/Automated-Backup-Project.git
 cd Automated-Backup-Project
@@ -47,7 +47,7 @@ Storage: Google Drive
 
 Follow on-screen instructions to authenticate
 
-### ⚙️ Configuration
+### **⚙️ Configuration**
 
 Edit config.json to define your project settings:
 
@@ -78,7 +78,7 @@ webhook_url → Webhook URL for notifications (optional)
 
 retention → Number of daily, weekly, monthly backups to keep
 
-### ▶️ Usage
+###  **▶️ Usage**
 Run Manually
 python3 backup.py --config config.json
 
@@ -110,7 +110,7 @@ curl -X POST -H "Content-Type: application/json" \
 -d '{"project": "MyApp", "date": "2025-08-20 02:00:06", "status": "Backup Successful"}' \
 https://webhook.site/your-unique-url
 
-### 🔐 Security Best Practices
+### **🔐 Security Best Practices**
 
 Store rclone config securely (~/.config/rclone/rclone.conf)
 
@@ -119,3 +119,9 @@ Use service accounts for production instead of personal Google Drive authenticat
 Keep config.json or .env outside public repos (or add to .gitignore)
 
 Test retention rules carefully before applying to production backups
+
+### **👨‍💻 Author**
+Aniket Dauskar
+📧 Email: aniketdauskar99@gmail.com
+🔗 LinkedIn: linkedin.com/in/aniketdauskar
+📍 Pune, Maharashtra, India
