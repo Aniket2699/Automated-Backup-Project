@@ -1,25 +1,28 @@
-🚀 Automated Backup and Rotation Script with Google Drive Integration
+### 🚀 Automated Backup & Rotation with Google Drive Integration
 📌 Overview
 
-This project provides an automated backup solution with the following features:
+This project provides a fully automated backup solution with Google Drive integration.
 
-Compresses project files into a .tar.gz archive.
+Key Features:
 
-Uploads the backup to Google Drive using rclone.
+📦 Compresses project files into .tar.gz archives
 
-Implements retention policy (daily, weekly, monthly rotation).
+☁️ Uploads backups to Google Drive using rclone
 
-Logs all backup operations with timestamps.
+🔄 Implements a retention policy (daily, weekly, monthly rotation)
 
-Sends an optional webhook notification (via cURL) after successful backup.
+📝 Maintains detailed logs with timestamps
 
-Can be scheduled with cron jobs for full automation.
+🔔 Sends optional webhook notifications after successful backups
+
+⏰ Supports cron job scheduling for hands-free automation
 
 ⚙️ Requirements
 
 Python 3.x
 
-rclone (configured with Google Drive)
+rclone
+ (configured with Google Drive)
 
 Linux environment (Ubuntu recommended)
 
@@ -36,17 +39,17 @@ sudo apt install rclone python3
 rclone config
 
 
-Choose n (new remote).
+Choose n for new remote
 
 Name: gdrive
 
 Storage: Google Drive
 
-Follow on-screen instructions to authenticate with Google.
+Follow on-screen instructions to authenticate
 
 ⚙️ Configuration
 
-Edit config.json to set your project details:
+Edit config.json to define your project settings:
 
 {
   "project_dir": "/home/ubuntu/backups/MyApp",
@@ -61,8 +64,9 @@ Edit config.json to set your project details:
   }
 }
 
+Config Parameters
 
-project_dir → Path to your project files
+project_dir → Path to project files
 
 project_name → Name of project (used in backup filename)
 
@@ -74,23 +78,23 @@ webhook_url → Webhook URL for notifications (optional)
 
 retention → Number of daily, weekly, monthly backups to keep
 
-▶️ Running the Script
+▶️ Usage
 Run Manually
 python3 backup.py --config config.json
 
-Example With Webhook Disabled
+Run Without Webhook Notifications
 python3 backup.py --config config.json --no-notify
 
-🕒 Automating with Cron
+⏰ Automating with Cron
 
-Add this line to crontab (crontab -e):
+Add this line to your crontab (crontab -e):
 
 0 2 * * * python3 /home/ubuntu/Automated-Backup-Project/backup.py --config /home/ubuntu/Automated-Backup-Project/config.json >> /home/ubuntu/backups/backup.log 2>&1
 
 
-This runs the backup daily at 2:00 AM.
+This will run the backup daily at 2:00 AM.
 
-📄 Example Output Log (backup.log)
+📄 Example Backup Log
 [2025-08-20 02:00:01] Backup started.
 [2025-08-20 02:00:02] Created archive: MyApp_2025-08-20_0200.tar.gz
 [2025-08-20 02:00:05] Uploaded to Google Drive: Backups/MyProject/MyApp_2025-08-20_0200.tar.gz
@@ -98,20 +102,20 @@ This runs the backup daily at 2:00 AM.
 [2025-08-20 02:00:06] Webhook notification sent successfully.
 [2025-08-20 02:00:06] Backup completed successfully.
 
-🌐 Webhook Notification Example
+🌐 Webhook Notification
 
-The script sends a JSON payload like this:
+If enabled, the script sends a JSON payload:
 
 curl -X POST -H "Content-Type: application/json" \
 -d '{"project": "MyApp", "date": "2025-08-20 02:00:06", "status": "Backup Successful"}' \
 https://webhook.site/your-unique-url
 
-🔐 Security Considerations
+🔐 Security Best Practices
 
-Store rclone config securely (~/.config/rclone/rclone.conf).
+Store rclone config securely (~/.config/rclone/rclone.conf)
 
-Use service accounts for production instead of personal Google Drive auth.
+Use service accounts for production instead of personal Google Drive authentication
 
-Keep .env or config.json outside public repos (or use .gitignore).
+Keep config.json or .env outside public repos (or add to .gitignore)
 
-Test retention rules carefully before applying to critical backups.
+Test retention rules carefully before applying to production backups
