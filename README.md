@@ -123,5 +123,5 @@ Test retention rules carefully before applying to production backups
 ### **👨‍💻 Author**
 Aniket Dauskar
 📧 Email: aniketdauskar99@gmail.com
-🔗 LinkedIn: linkedin.com/in/aniketdauskar
+🔗 LinkedIn: linkedin.com/in/aniketdauskar26
 📍 Pune, Maharashtra, India
